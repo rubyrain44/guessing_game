@@ -17,24 +17,29 @@ def index(request):
     return render(request, "index.html", context)
 
 def guess(request):
-    number = request.session['number']
-    print(number)
-    guess = request.POST['guess']
-    print(guess)
-    if int(guess) > number:
+    if request.POST['guess'] == '':
         context = {
-            'alert' : "Too high!"
+            'alert' : "Must enter a guess!"
         }
-    elif int(guess) < number:
-        context = {
-            'alert' : "Too low!"
-        }
+        return render(request, "index.html", context)
     else:
-        context = {
-            'alert' : "you got it!"
-        }
-
-    return render(request, "index.html", context)
+        number = request.session['number']
+        print(number)
+        guess = request.POST['guess']
+        print(guess)
+        if int(guess) > number:
+            context = {
+                'alert' : "Too high!"
+            }
+        elif int(guess) < number:
+            context = {
+                'alert' : "Too low!"
+            }
+        else:
+            context = {
+                'alert' : "you got it!"
+            }
+        return render(request, "index.html", context)
 
 
 

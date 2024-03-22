@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    background-color: #007F73;
+    justify-content: center;
+    align-items: center;
+    font-family: "Ubuntu", sans-serif;
+    color: white;
+}
+
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+    margin: 10%;
+    background-color: #4CCD99;
+    border: 10px solid #FFC700;
+    box-shadow: 5px 5px #FFF455;
+}
+
+.top, .bottom {
+    margin: 5%;
+}
